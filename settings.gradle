@@ -1,0 +1,2 @@
+rootProject.name='SciekiV2'
+include ':app'
