@@ -5,19 +5,19 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Toast
+import com.example.sciekiv2.model.SewageDisposalData
 import io.realm.Realm
-import io.realm.kotlin.createObject
 import io.realm.kotlin.where
 
 class ControlPanelActivity : AppCompatActivity() {
 
     private lateinit var saveSewageToDB: Button
     private lateinit var readSewageFromDB: Button
+    private lateinit var community: Button
+    private lateinit var realm: Realm
 
     //TESTOWE
     private lateinit var dousuwaniaelemtowWbazie: Button
-    private lateinit var testowoDodajeRekord: Button
-    private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +25,10 @@ class ControlPanelActivity : AppCompatActivity() {
         realm = Realm.getDefaultInstance()
         saveSewageToDB = findViewById(R.id.sewage_disposal_button)
         readSewageFromDB = findViewById(R.id.show_disposal_button)
+        community = findViewById(R.id.community_list_button)
 
         //TESTOWE
         dousuwaniaelemtowWbazie = findViewById(R.id.dousuwaniaelemtowWbazie)
-        testowoDodajeRekord = findViewById(R.id.testowoDodajeRekord)
 
         saveSewageToDB.setOnClickListener {
             val intent = Intent(this, SewageDisposal::class.java)
@@ -43,8 +43,9 @@ class ControlPanelActivity : AppCompatActivity() {
             funkcjaktoraWyjebieKiedys()
         }
         //TESTOWE
-        testowoDodajeRekord.setOnClickListener {
-            testoweAddRecordToDatabase()
+        community.setOnClickListener {
+            val intent = Intent(this, CommunityPanel::class.java)
+            startActivity(intent);
         }
     }
 

@@ -2,12 +2,10 @@ package com.example.sciekiv2
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import com.example.sciekiv2.model.SewageDisposalData
 import io.realm.Realm
-
-import kotlinx.android.synthetic.main.activity_sewage_disposal.*
 
 class SewageDisposal : AppCompatActivity() {
     private lateinit var saveSewageToDB: Button

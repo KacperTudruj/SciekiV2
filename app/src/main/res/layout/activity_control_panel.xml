@@ -71,14 +71,14 @@
             tools:layout_conversion_absoluteWidth="411dp" />
 
         <Button
-            android:id="@+id/testowoDodajeRekord"
+            android:id="@+id/community_list_button"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/dousuwaniaelemtowWbazie"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="0dp"
             android:backgroundTint="#CA7A04"
-            android:text="RekordTEST!"
+            android:text="@string/community_list_button"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
             tools:layout_conversion_absoluteHeight="48dp"
