@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
@@ -8,41 +9,39 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/community_list_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:text="@string/community_list_text_view"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        tools:layouconversion_absoluteWidth="100dp" />
-
     <LinearLayout
-        android:id="@+id/rel_layout_community_list"
-        android:layout_width="360dp"
-        android:layout_height="574dp"
-        android:layout_below="@id/community_list_text_view"
+        android:id="@+id/layout_for_community_panel_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:layout_centerInParent="true"
-        android:layout_marginTop="12dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/add_community"
-            android:layout_width="320dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/community_list_text_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#CA7A04"
-            android:text="Dodaj Gminę (Testowo button)"
+            android:orientation="vertical"
+            android:text="@string/community_list_text_view"
             android:textColor="#FFFFFF"
-            android:textSize="36sp"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="411dp" />
-
+            android:textSize="36sp"/>
+        <Button
+                android:id="@+id/add_community"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#CA7A04"
+                android:text="Dodaj Gmię"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"/>
+        <ListView
+            android:id="@+id/community_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-</ScrollView>
+</android.support.constraint.ConstraintLayout>
