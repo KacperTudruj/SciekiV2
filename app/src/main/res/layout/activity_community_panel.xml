@@ -26,7 +26,7 @@
             android:textColor="#FFFFFF"
             android:textSize="36sp"/>
         <Button
-                android:id="@+id/add_community"
+                android:id="@+id/add_community_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

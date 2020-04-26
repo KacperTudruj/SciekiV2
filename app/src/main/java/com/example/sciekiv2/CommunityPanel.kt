@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.ViewGroup
 import android.widget.*
+import com.example.sciekiv2.adapter.CommunityAdapter
 import com.example.sciekiv2.model.CommunityData
 import io.realm.Realm
 import io.realm.RealmList
@@ -17,39 +18,37 @@ class CommunityPanel : AppCompatActivity() {
 
     private lateinit var realm: Realm
     private lateinit var listView: ListView
+    private lateinit var addCommunityToDB: Button
 
-    //private lateinit var addCommunityToDB: Button
-    //Zalezy mi aby Przycisk  dodawania gminy był zawsze na górze, a pod spodem automatycznie dodawały się gminy z przyciskiem usun.
-    // Czytanie gmin powinno odbywać się zawsze z bazy. Poczytać jak ludzie dodają tak by pojawiało się jedno pod drugim.
-    // oraz scrool najprawtopodobniej.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community_panel)
 
-        //listView = findViewById<ListView>(R.id.recipe_list_view)
         realm = Realm.getDefaultInstance()
         addCommunity("Gmina Wina")
-//        addCommunity("Commutniy2")
-//        addCommunity("Commutniy3")
-//        addCommunity("Commutniy4")
+
+        addCommunityToDB = findViewById(R.id.add_community_button)
 
         listView = findViewById<ListView>(R.id.community_list_view)
-        val layoutV11 = findViewById(R.id.layout_for_community_panel_data) as LinearLayout
+        listView.setBackgroundColor(Color.parseColor("#FF0000")) //testowy kolorek
+        //Customer Adapter
+        listView.adapter = CommunityAdapter(this)
+
+
+
+        val layoutV11 = findViewById<LinearLayout>(R.id.layout_for_community_panel_data)
 
         val add_community_button = Button(this)
-
-
         add_community_button.layoutParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-
         add_community_button.text = "O cie chuj"
         layoutV11.addView(add_community_button)
         add_community_button.setOnClickListener {
-
             val numberOfRecords = realm.where<CommunityData>().count()
             val results = realm.where<CommunityData>().findAll()
+            //val communityAdapter =
             //val test = RealmResults<CommunityData>()
 //            Toast.makeText(this, results.get(0)?.communityName.toString(), Toast.LENGTH_SHORT).show()
 
