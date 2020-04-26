@@ -19,45 +19,26 @@ class CommunityPanel : AppCompatActivity() {
     private lateinit var realm: Realm
     private lateinit var listView: ListView
     private lateinit var addCommunityToDB: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community_panel)
 
         realm = Realm.getDefaultInstance()
-        addCommunity("Gmina Wina")
+        addCommunity("Gdzieś tam daleko w lublinie")
+        addCommunity("No a jak gmina może się nazywać?")
+        addCommunity("Jastków")
 
+        val numberOfRecords = realm.where<CommunityData>().count()
+        val communityResults = realm.where<CommunityData>().findAll()
         addCommunityToDB = findViewById(R.id.add_community_button)
 
-        listView = findViewById<ListView>(R.id.community_list_view)
-        listView.setBackgroundColor(Color.parseColor("#FF0000")) //testowy kolorek
-        //Customer Adapter
-        listView.adapter = CommunityAdapter(this)
-
-
-
-        val layoutV11 = findViewById<LinearLayout>(R.id.layout_for_community_panel_data)
-
-        val add_community_button = Button(this)
-        add_community_button.layoutParams = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-        add_community_button.text = "O cie chuj"
-        layoutV11.addView(add_community_button)
-        add_community_button.setOnClickListener {
-            val numberOfRecords = realm.where<CommunityData>().count()
-            val results = realm.where<CommunityData>().findAll()
-            //val communityAdapter =
-            //val test = RealmResults<CommunityData>()
-//            Toast.makeText(this, results.get(0)?.communityName.toString(), Toast.LENGTH_SHORT).show()
-
-            //val communityList = ArrayList<>
-            for (i in 0 until numberOfRecords) {
-                listView.addView(textViewTEST(results[i.toInt()]?.communityName.toString()))
-            }
-
+        //Array list for Addapter
+        val communityList = ArrayList<String>()
+        for(i in 0 until numberOfRecords){
+            communityList.add(communityResults.get(i.toInt())?.communityName.toString())
         }
+        listView = findViewById<ListView>(R.id.community_list_view)
+        listView.adapter = CommunityAdapter(this, communityList)
     }
 
     private fun addCommunity(communityName: String) {
