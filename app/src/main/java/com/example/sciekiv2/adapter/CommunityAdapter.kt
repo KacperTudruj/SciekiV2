@@ -8,41 +8,41 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.sciekiv2.R
+import com.example.sciekiv2.model.CommunityData
+import io.realm.RealmResults
 
-class CommunityAdapter(context: Context, arrayList: ArrayList<String>) : BaseAdapter() {
+class CommunityAdapter(context: Context, communityDataResult: RealmResults<CommunityData>) : BaseAdapter() {
 
     private val context: Context
-    private val arrayList: ArrayList<String>
-    private var arrayListSize: Int = 0
+    private val communityDataResult: RealmResults<CommunityData>
 
     init {
         this.context = context
-        this.arrayList = arrayList
-        this.arrayListSize = arrayList.size
+        this.communityDataResult = communityDataResult
     }
 
     //responsible for rendering out each row
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val layoutInflater = LayoutInflater.from(this.context)
-        val row =layoutInflater.inflate(R.layout.adapter_view_community, parent, false)
+        val row = layoutInflater.inflate(R.layout.adapter_view_community, parent, false)
 
         val commmunityName = row.findViewById<TextView>(R.id.community_name)
-        commmunityName.text = "${arrayList[position]}"
+        commmunityName.text = this.communityDataResult[position]?.communityName
         return row
     }
 
     override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
+        return position
     }
 
     override fun getItemId(position: Int): Long {
-        TODO("Not yet implemented")
+        return position.toLong()
     }
 
     //responsable for how many  rows in my list
     override fun getCount(): Int {
-        return arrayListSize
+        return this.communityDataResult.size
     }
 
 }

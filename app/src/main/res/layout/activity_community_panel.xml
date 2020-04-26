@@ -9,31 +9,75 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/layout_for_community_panel_data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_centerInParent="true"
+    <RelativeLayout
+        android:id="@+id/layout_for_community_panel"
+        android:layout_width="415dp"
+        android:layout_height="321dp"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-4dp">
+
         <TextView
             android:id="@+id/community_list_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
             android:orientation="vertical"
             android:text="@string/community_list_text_view"
             android:textColor="#FFFFFF"
-            android:textSize="36sp"/>
+            android:textSize="36sp"
+            tools:ignore="RtlHardcoded" />
+
         <Button
-                android:id="@+id/add_community_button"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#CA7A04"
-                android:text="Dodaj Gmię"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp"/>
+            android:id="@+id/add_community_button"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_text_community"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#CA7A04"
+            android:text="Dodaj Gmię"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <EditText
+            android:id="@+id/edit_text_community"
+            android:layout_width="309dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/community_list_text_view"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_for_community_panel_data"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_for_community_panel"
+        tools:ignore="MissingConstraints">
+
         <ListView
             android:id="@+id/community_list_view"
             android:layout_width="match_parent"
@@ -42,6 +86,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
