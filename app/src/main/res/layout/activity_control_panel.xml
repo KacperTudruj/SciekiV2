@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
@@ -10,61 +10,67 @@
 
     <TextView
         android:id="@+id/controll_panel_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:padding="10dp"
         android:layout_marginTop="90dp"
         android:gravity="center"
-        android:orientation="vertical"
         android:text="@string/controll_panel_text" />
 
     <RelativeLayout
-        android:layout_width="356dp"
-        android:layout_height="499dp"
-        android:layout_below="@id/controll_panel_text"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="87dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/sewage_disposal_button"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:text="@string/sewage_disposal"
             android:theme="@style/SciekiTheme.Button" />
 
         <Button
             android:id="@+id/show_disposal_button"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_below="@+id/sewage_disposal_button"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:text="@string/count_disposal"
             android:theme="@style/SciekiTheme.Button"/>
 
         <Button
             android:id="@+id/dousuwaniaelemtowWbazie"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_below="@+id/show_disposal_button"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:text="Do wyjebania bazy"
             android:theme="@style/SciekiTheme.Button"/>
 
         <Button
             android:id="@+id/community_list_button"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_below="@id/dousuwaniaelemtowWbazie"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
             android:text="@string/community_list_button"
             android:theme="@style/SciekiTheme.Button"/>
 
     </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>

@@ -73,11 +73,13 @@
 
         <Button
             android:id="@+id/add_sewage_disposal_data_button"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_below="@id/quantity_of_sewage_edit_text"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:text="@string/add_sewage_disposal_data_button"
             android:theme="@style/SciekiTheme.Button" />
 

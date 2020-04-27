@@ -8,10 +8,10 @@
 
     <TextView
         android:gravity="center"
-        android:textAlignment="center"
         android:text="TextView1"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:id="@+id/community_name"/>
 
     <RelativeLayout
@@ -24,10 +24,7 @@
             android:id="@+id/edit_result_button"
             android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="0dp"
-            android:gravity="center"
+            android:padding="10dp"
             android:text="edytuj"
             android:theme="@style/SciekiTheme.Button"/>
 
@@ -35,11 +32,8 @@
             android:id="@+id/delete_result_button"
             android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="0dp"
+            android:padding="10dp"
             android:layout_toEndOf="@+id/edit_result_button"
-            android:gravity="center"
             android:text="usuń"
             android:theme="@style/SciekiTheme.Button"/>
     </RelativeLayout>

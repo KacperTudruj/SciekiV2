@@ -33,5 +33,6 @@
 
     <!--CommunityPanel                  -->
     <string name="community_list_text_view">Lista Gmin</string>
+    <string name="commutniy_add_button">Dodaj Gmię</string>
 
 </resources>
