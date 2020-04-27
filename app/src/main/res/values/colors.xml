@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+<!--    Scieki Theme-->
+    <color name="background">#3C3527</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="buttonColor">#CA7A04</color>
 </resources>

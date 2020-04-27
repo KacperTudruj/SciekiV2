@@ -5,18 +5,18 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3C3527"
+    android:theme="@style/SciekiTheme"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/layout_for_community_panel"
         android:layout_width="415dp"
-        android:layout_height="321dp"
+        android:layout_height="283dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-4dp">
+        tools:layout_editor_absoluteX="-2dp">
 
         <TextView
             android:id="@+id/community_list_text_view"
@@ -31,8 +31,6 @@
             android:gravity="center"
             android:orientation="vertical"
             android:text="@string/community_list_text_view"
-            android:textColor="#FFFFFF"
-            android:textSize="36sp"
             tools:ignore="RtlHardcoded" />
 
         <Button
@@ -45,10 +43,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="#CA7A04"
             android:text="Dodaj Gmię"
-            android:textColor="#FFFFFF"
-            android:textSize="36sp" />
+            android:theme="@style/SciekiTheme.Button" />
 
         <EditText
             android:id="@+id/edit_text_community"
@@ -60,9 +56,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="Name"
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
 
