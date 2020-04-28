@@ -6,6 +6,7 @@
 
 <!--    Scieki Theme-->
     <color name="background">#3C3527</color>
-    <color name="colorText">#FFFFFF</color>
+    <color name="colorText">#F6F6F6</color>
     <color name="buttonColor">#CA7A04</color>
+    <color name="buttonColorDisable">#8C8C8C</color>
 </resources>

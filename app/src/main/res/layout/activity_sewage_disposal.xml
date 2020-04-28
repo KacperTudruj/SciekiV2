@@ -19,7 +19,7 @@
         android:text="@string/sewage_disposal_text" />
 
     <!--    DODAJ POLA DO DODANIA SCIEKU -->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="360dp"
         android:layout_height="574dp"
         android:layout_below="@id/sewage_disposal"
@@ -37,14 +37,14 @@
             android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText" />
 
-        <EditText
-            android:id="@+id/community_edit_text"
+        <Spinner
+            android:id="@+id/community_spinner"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/adress_edit_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="@string/community_edit_text"
+            android:text="@string/community_spinner"
             android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText" />
 
@@ -52,7 +52,7 @@
             android:id="@+id/type_of_sewage_edit_text"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/community_edit_text"
+            android:layout_below="@+id/community_spinner"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:text="@string/type_of_sewage_edit_text"
@@ -83,6 +83,6 @@
             android:text="@string/add_sewage_disposal_data_button"
             android:theme="@style/SciekiTheme.Button" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>

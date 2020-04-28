@@ -24,12 +24,13 @@
 
     <!--SewageDisposalActivity          -->
     <string name="sewage_disposal_text">Dodaj Wywóz</string>
-    <string name="community_edit_text">Gmina</string>
+    <string name="community_spinner">Gmina</string>
     <string name="type_of_sewage_edit_text">rodzaj ścieku</string>
     <string name="adress_edit_text">adres</string>
     <string name="quantity_of_sewage_edit_text">ilosc</string>
     <string name="add_sewage_disposal_data_button">Dodaj</string>
     <string name="community_list_button">Gminy</string>
+    <string name="community_list_is_empty">Brak gminy</string>
 
     <!--CommunityPanel                  -->
     <string name="community_list_text_view">Lista Gmin</string>

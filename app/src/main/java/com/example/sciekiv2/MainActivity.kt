@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         Realm.init(this)
 
         wellcomeButton.setOnClickListener {
-            Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ControlPanelActivity::class.java)
             startActivity(intent);
         }
