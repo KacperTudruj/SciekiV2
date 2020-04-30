@@ -30,7 +30,7 @@ class CommunityPanel : AppCompatActivity() {
 
         addCommunityToDBButton = findViewById(R.id.add_community_button)
         addCommunityToDBButton.setOnClickListener {
-            editTextCommunity.text
+            //editTextCommunity.text
             addCommunityData(editTextCommunity.text.toString())
 
             //refreshing listView!

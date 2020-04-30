@@ -52,12 +52,11 @@ class ControlPanelActivity : AppCompatActivity() {
     private fun readRecordFromDatabase() {
         realm.beginTransaction()
 
-        val result = realm.where<SewageDisposalData>()
-            .equalTo("quantity_of_sewage", 10.5f).findAll()
+        val result = realm.where<SewageDisposalData>().findAll()
 
         //val test = result.average("quantity_of_sewage")
         //Toast.makeText(this, result.average("quantity_of_sewage").toString(), Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, "$result", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, result[2]?.quantity_of_sewage.toString(), Toast.LENGTH_SHORT).show()
 
         realm.commitTransaction()
     }
