@@ -38,8 +38,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text=""
-            android:theme="@style/SciekiTheme.EditText"/>
+            android:hint="@string/add_sewage_disposal_data_button"
+            android:theme="@style/SciekiTheme.EditText"
+            tools:ignore="LabelFor" />
 
         <Button
             android:id="@+id/add_community_button"

@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="@string/adress_edit_text"
+            android:hint="@string/adress_edit_text"
             android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText" />
 
@@ -44,7 +44,6 @@
             android:layout_below="@+id/adress_edit_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="@string/community_spinner"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -54,7 +53,7 @@
             android:layout_below="@+id/community_spinner"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="@string/type_of_sewage_edit_text"
+            android:hint="@string/type_of_sewage_edit_text"
             android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText" />
 
@@ -66,8 +65,7 @@
             android:layout_below="@id/type_of_sewage_edit_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="@string/quantity_of_sewage_edit_text"
-            android:textColor="#FFFFFF"
+            android:hint="@string/quantity_of_sewage_edit_text"
             android:inputType="numberDecimal"
             android:theme="@style/SciekiTheme.EditText" />
 

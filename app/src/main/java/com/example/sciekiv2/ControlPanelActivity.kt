@@ -56,7 +56,7 @@ class ControlPanelActivity : AppCompatActivity() {
 
         //val test = result.average("quantity_of_sewage")
         //Toast.makeText(this, result.average("quantity_of_sewage").toString(), Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, result[2]?.quantity_of_sewage.toString(), Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, result[0]?.quantity_of_sewage.toString(), Toast.LENGTH_SHORT).show()
 
         realm.commitTransaction()
     }

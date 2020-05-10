@@ -2,17 +2,21 @@ package com.example.sciekiv2.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.content.Intent
+import android.view.*
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.TextView
 import com.example.sciekiv2.R
+import com.example.sciekiv2.Rename
 import com.example.sciekiv2.model.CommunityData
+import io.realm.Realm
 import io.realm.RealmResults
 
-class CommunityAdapter(context: Context, communityDataResult: RealmResults<CommunityData>) : BaseAdapter() {
+class CommunityAdapter(context: Context, communityDataResult: RealmResults<CommunityData>) :
+    BaseAdapter() {
 
+    private lateinit var realm: Realm
     private val context: Context
     private val communityDataResult: RealmResults<CommunityData>
 
@@ -24,10 +28,31 @@ class CommunityAdapter(context: Context, communityDataResult: RealmResults<Commu
     //responsible for rendering out each row
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        realm = Realm.getDefaultInstance()
+
         val layoutInflater = LayoutInflater.from(this.context)
         val row = layoutInflater.inflate(R.layout.adapter_view_community, parent, false)
 
         val commmunityName = row.findViewById<TextView>(R.id.community_name)
+        val editResultButton = row.findViewById<Button>(R.id.edit_result_button)
+        val deleteResultButton = row.findViewById<Button>(R.id.delete_result_button)
+
+        editResultButton.setOnClickListener {
+            val intent = Intent(this.context, Rename()::class.java)
+            intent.putExtra("id", "xD")
+            //Moze przesłać poprostu obiekt realma do edycji? Będzie prosciej
+            context.startActivity(intent)
+        }
+
+        deleteResultButton.setOnClickListener {
+
+            realm.beginTransaction()
+            //val oneCommunityResult = communityDataResult
+            this.communityDataResult[position]?.deleteFromRealm()
+            realm.commitTransaction()
+            notifyDataSetChanged()
+        }
+
         commmunityName.text = this.communityDataResult[position]?.communityName
         return row
     }
@@ -44,5 +69,4 @@ class CommunityAdapter(context: Context, communityDataResult: RealmResults<Commu
     override fun getCount(): Int {
         return this.communityDataResult.size
     }
-
 }

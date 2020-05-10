@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/SciekiTheme">
         <activity
+            android:name=".Rename" />
+        <activity
             android:name=".CommunityPanel" />
-
         <activity
             android:name=".SewageDisposal"
             android:label="@string/title_activity_sewage_disposal" />

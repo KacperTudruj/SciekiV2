@@ -24,7 +24,9 @@ class CommunityPanel : AppCompatActivity() {
         val communityResults = realm.where<CommunityData>().findAll()
 
         listView = findViewById(R.id.community_list_view)
-        listView.adapter = CommunityAdapter(this, communityResults)
+        val adapter = CommunityAdapter(this, communityResults)
+        adapter.notifyDataSetChanged()
+        listView.adapter = adapter
 
         val editTextCommunity = findViewById<EditText>(R.id.edit_text_community)
 
