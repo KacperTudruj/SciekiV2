@@ -7,7 +7,7 @@ import java.util.*
 
 @RealmClass
 open class CommunityData(
-    @PrimaryKey private var id: String = UUID.randomUUID().toString(),
+    @PrimaryKey var id: String = UUID.randomUUID().toString(),
     private var createdAt: Date = Date(),
     var communityName: String = ""
 ): RealmObject()

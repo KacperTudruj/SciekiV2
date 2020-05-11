@@ -39,8 +39,11 @@ class CommunityAdapter(context: Context, communityDataResult: RealmResults<Commu
 
         editResultButton.setOnClickListener {
             val intent = Intent(this.context, Rename()::class.java)
-            intent.putExtra("id", "xD")
-            //Moze przesłać poprostu obiekt realma do edycji? Będzie prosciej
+
+            //sending communityname to edit
+            intent.putExtra("fieldNameToEdit", "community")
+            intent.putExtra("toEdit", this.communityDataResult[position]?.communityName)
+            intent.putExtra("queryId", this.communityDataResult[position]?.id)
             context.startActivity(intent)
         }
 

@@ -4,27 +4,44 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import com.example.sciekiv2.model.CommunityData
+import io.realm.Realm
+import io.realm.kotlin.where
 
 class Rename() : AppCompatActivity() {
 
-    private lateinit var test: Button
+    private lateinit var button: Button
+    private lateinit var editText: EditText
+    private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rename)
 
+        val intentExtras = intent.extras
+        realm = Realm.getDefaultInstance()
 
-        // Przekazyać ID z ralma do edycji i na podstawie tego edytować daną
-        //Dodać do intent.Extras nazwę bazy. By edytowac Rodzaj ścieku oraz gminę (bardziej uniwersalniej)
-        //Mały refaktor przydałby się bo już zaczya być syf
-        //Moze zmiaast dawac id to może warto dać obiekt Realam do edycji? Da się tak w ogóle?
-        val id = intent.extras
-        val data = id?.getString("id")
+        editText = findViewById(R.id.edit_text_community_window)
+        button = findViewById(R.id.edit_button_community_window)
 
 
+        if(intentExtras?.getString("fieldNameToEdit") == "community"){
+            val communityResults = realm.where<CommunityData>().equalTo("id", intentExtras?.getString("queryId")).findFirst()
+            editText.setText(communityResults?.communityName)
 
-        test = findViewById(R.id.edit_button_community_window)
-        test.text = data.toString()
-        //test.text = "KURWA NO"
+
+            Toast.makeText(this, communityResults?.communityName.toString(), Toast.LENGTH_SHORT).show()
+
+            button.setOnClickListener {
+                realm.beginTransaction()
+                communityResults?.communityName = editText.text.toString()
+                realm.copyToRealmOrUpdate(communityResults)
+                realm.commitTransaction()
+                this.finish()
+            }
+
+        }
+        //Czas to dobrze zrobić. WALIDACJA, Na to samą nazwę, oraz na puste pole. Zamiast wykonać ackcję to wyswietlić Tosta :D I nie tylko ten erkan
         }
     }
