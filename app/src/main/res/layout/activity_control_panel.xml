@@ -68,7 +68,19 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_below="@id/dousuwaniaelemtowWbazie"
-            android:text="@string/community_list_button"
+            android:text="@string/community_list_text_view"
+            android:theme="@style/SciekiTheme.Button"/>
+
+        <Button
+            android:id="@+id/type_of_sewage_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@id/community_list_button"
+            android:text="@string/type_of_sewage_edit_text"
             android:theme="@style/SciekiTheme.Button"/>
 
     </RelativeLayout>

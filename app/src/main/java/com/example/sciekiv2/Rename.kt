@@ -15,7 +15,7 @@ class Rename() : AppCompatActivity() {
     private lateinit var editText: EditText
     private lateinit var realm: Realm
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rename)
 
@@ -26,22 +26,24 @@ class Rename() : AppCompatActivity() {
         button = findViewById(R.id.edit_button_community_window)
 
 
-        if(intentExtras?.getString("fieldNameToEdit") == "community"){
-            val communityResults = realm.where<CommunityData>().equalTo("id", intentExtras?.getString("queryId")).findFirst()
+        if (intentExtras?.getString("fieldNameToEdit") == "community") {
+            val communityResults =
+                realm.where<CommunityData>().equalTo("id", intentExtras?.getString("queryId"))
+                    .findFirst()
             editText.setText(communityResults?.communityName)
-
-
-            Toast.makeText(this, communityResults?.communityName.toString(), Toast.LENGTH_SHORT).show()
-
             button.setOnClickListener {
-                realm.beginTransaction()
-                communityResults?.communityName = editText.text.toString()
-                realm.copyToRealmOrUpdate(communityResults)
-                realm.commitTransaction()
-                this.finish()
+                if (editText.text.toString() == "")
+                    Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()
+                else {
+                    realm.beginTransaction()
+                    communityResults?.communityName = editText.text.toString()
+                    realm.copyToRealmOrUpdate(communityResults)
+                    realm.commitTransaction()
+                    this.finish()
+                }
             }
 
         }
         //Czas to dobrze zrobić. WALIDACJA, Na to samą nazwę, oraz na puste pole. Zamiast wykonać ackcję to wyswietlić Tosta :D I nie tylko ten erkan
-        }
     }
+}

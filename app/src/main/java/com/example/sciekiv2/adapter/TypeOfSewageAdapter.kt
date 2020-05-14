@@ -3,26 +3,27 @@ package com.example.sciekiv2.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.example.sciekiv2.R
 import com.example.sciekiv2.Rename
-import com.example.sciekiv2.model.CommunityData
+import com.example.sciekiv2.model.TypeOfSewage
 import io.realm.Realm
 import io.realm.RealmResults
 
-class CommunityAdapter(context: Context, communityDataResult: RealmResults<CommunityData>) :
+class TypeOfSewageAdapter(context: Context, typeOfSewageDataResult: RealmResults<TypeOfSewage>) :
     BaseAdapter() {
-
     private lateinit var realm: Realm
     private val context: Context
-    private val communityDataResult: RealmResults<CommunityData>
+    private val typeOfSewageDataResult: RealmResults<TypeOfSewage>
 
     init {
         this.context = context
-        this.communityDataResult = communityDataResult
+        this.typeOfSewageDataResult = typeOfSewageDataResult
     }
 
     //responsible for rendering out each row
@@ -42,8 +43,8 @@ class CommunityAdapter(context: Context, communityDataResult: RealmResults<Commu
 
             //sending communityname to edit
             intent.putExtra("fieldNameToEdit", "community")
-            intent.putExtra("toEdit", this.communityDataResult[position]?.communityName)
-            intent.putExtra("queryId", this.communityDataResult[position]?.id)
+            intent.putExtra("toEdit", this.typeOfSewageDataResult[position]?.typeOfSewageName)
+            intent.putExtra("queryId", this.typeOfSewageDataResult[position]?.id)
             context.startActivity(intent)
         }
 
@@ -51,12 +52,12 @@ class CommunityAdapter(context: Context, communityDataResult: RealmResults<Commu
 
             realm.beginTransaction()
             //val oneCommunityResult = communityDataResult
-            this.communityDataResult[position]?.deleteFromRealm()
+            this.typeOfSewageDataResult[position]?.deleteFromRealm()
             realm.commitTransaction()
             notifyDataSetChanged()
         }
 
-        commmunityName.text = this.communityDataResult[position]?.communityName
+        commmunityName.text = this.typeOfSewageDataResult[position]?.typeOfSewageName
         return row
     }
 
@@ -70,6 +71,6 @@ class CommunityAdapter(context: Context, communityDataResult: RealmResults<Commu
 
     //responsable for how many  rows in my list
     override fun getCount(): Int {
-        return this.communityDataResult.size
+        return this.typeOfSewageDataResult.size
     }
 }

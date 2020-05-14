@@ -35,5 +35,10 @@
     <!--CommunityPanel                  -->
     <string name="community_list_text_view">Lista Gmin</string>
     <string name="commutniy_add_button">Dodaj Gmię</string>
+    <string name="title_activity_type_of_sewage">type_of_sewage</string>
+
+    <!--TypeOfSewagePanel               -->
+    <string name="type_of_sewage_list_text_view">Rodzaj Ścieków</string>
+    <string name="type_of_sewage_add_button">Dodaj rodzaj ścieku</string>
 
 </resources>

@@ -32,9 +32,11 @@ class CommunityPanel : AppCompatActivity() {
 
         addCommunityToDBButton = findViewById(R.id.add_community_button)
         addCommunityToDBButton.setOnClickListener {
-            //editTextCommunity.text
-            addCommunityData(editTextCommunity.text.toString())
-
+            if (editTextCommunity.text.toString() == "")
+                Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()
+            else {
+                addCommunityData(editTextCommunity.text.toString())
+            }
             //refreshing listView!
             listView.invalidateViews()
         }
