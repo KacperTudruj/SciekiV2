@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.sciekiv2.model.CommunityData
 import com.example.sciekiv2.model.SewageDisposalData
+import com.example.sciekiv2.model.TypeOfSewageData
 import io.realm.Realm
 import io.realm.RealmResults
 import io.realm.kotlin.where
@@ -21,7 +22,7 @@ class SewageDisposal : AppCompatActivity() {
     private lateinit var saveSewageButton: Button
     private lateinit var spinnerCommunity: Spinner
     private lateinit var adressEditText: EditText
-    private lateinit var typeOfSewageEditText: EditText
+    private lateinit var spinnerTypeOfSewage: Spinner
     private lateinit var quantityOfSewageEditText: EditText
     private lateinit var realm: Realm
 
@@ -34,31 +35,31 @@ class SewageDisposal : AppCompatActivity() {
 
         adressEditText = findViewById(R.id.sewage_disposal_id_adress_edit_text)
         spinnerCommunity = findViewById(R.id.sewage_disposal_id_community_spinner)
-        typeOfSewageEditText = findViewById(R.id.sewage_disposal_id_type_edit_text)
+        spinnerTypeOfSewage = findViewById(R.id.sewage_disposal_id_type_edit_text)
         quantityOfSewageEditText = findViewById(R.id.sewage_disposal_id_quantity_edit_text)
         saveSewageButton = findViewById(R.id.sewage_disposal_id_add_sewage_disposal_button)
 
-        val communityDataBaseResults = realm.where<CommunityData>().findAll()
+        //Spinner for community
         val communityList = ArrayList<String>()
-
-        //make button disabled  when community is empty, else add componets to list
-        if (communityDataBaseResults.isEmpty()) {
-            saveSewageButton.isEnabled = false
-            saveSewageButton.text = "X"
-            communityList.add(getText(R.string.community_panel_string_list_is_empty) as String)
-        } else {
             for (community in realm.where<CommunityData>().findAll()) {
-                communityList.add(community?.communityName.toString())
+                communityList.add(community.communityName.toString())
             }
-        }
+        createSpinner(communityList, spinnerCommunity)
 
-        spinnerSpiner(communityList, spinnerCommunity)
+        //Spinner for Sewage
+        val sewageList = ArrayList<String>()
+            for (sewage in realm.where<TypeOfSewageData>().findAll()) {
+                sewageList.add(sewage.typeOfSewageName)
+            }
+        //Toast.makeText(this, "$communityList", Toast.LENGTH_SHORT).show()
+        createSpinner(sewageList, spinnerTypeOfSewage)
+
 
         saveSewageButton.setOnClickListener {
             addSewage(
                 adressEditText.text.toString(),
                 spinnerCommunity.selectedItem.toString(),
-                typeOfSewageEditText.text.toString(),
+                spinnerTypeOfSewage.selectedItem.toString(),
                 quantityOfSewageEditText.text.toString().toFloat()
             )
             val intent = Intent(this, ControlPanelActivity::class.java)
@@ -87,8 +88,8 @@ class SewageDisposal : AppCompatActivity() {
 
     }
 
-    private fun spinnerSpiner(arrayList: ArrayList<String>, spinner: Spinner) {
-        spinnerCommunity.adapter =
+    private fun createSpinner(arrayList: ArrayList<String>, spinner: Spinner) {
+        spinner.adapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayList)
 
         spinner.onItemSelectedListener = object :

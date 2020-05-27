@@ -11,15 +11,15 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.sciekiv2.R
 import com.example.sciekiv2.Rename
-import com.example.sciekiv2.model.TypeOfSewage
+import com.example.sciekiv2.model.TypeOfSewageData
 import io.realm.Realm
 import io.realm.RealmResults
 
-class TypeOfSewageAdapter(context: Context, typeOfSewageDataResult: RealmResults<TypeOfSewage>) :
+class TypeOfSewageAdapter(context: Context, typeOfSewageDataResult: RealmResults<TypeOfSewageData>) :
     BaseAdapter() {
     private lateinit var realm: Realm
     private val context: Context
-    private val typeOfSewageDataResult: RealmResults<TypeOfSewage>
+    private val typeOfSewageDataResult: RealmResults<TypeOfSewageData>
 
     init {
         this.context = context
@@ -43,7 +43,7 @@ class TypeOfSewageAdapter(context: Context, typeOfSewageDataResult: RealmResults
 
             //Nie działa edycja, należy ją poprawić...
             //sending communityname to edit
-            intent.putExtra("fieldNameToEdit", "community")
+            intent.putExtra("fieldNameToEdit", "sewage")
             intent.putExtra("toEdit", this.typeOfSewageDataResult[position]?.typeOfSewageName)
             intent.putExtra("queryId", this.typeOfSewageDataResult[position]?.id)
             context.startActivity(intent)

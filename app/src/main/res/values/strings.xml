@@ -20,7 +20,6 @@
 
     <!--SewageDisposalActivity          -->
     <string name="sewage_disposal_string_text_view">Dodaj Wywóz</string>
-    <string name="sewage_disposal_string_type_edit_text">rodzaj ścieku</string>
     <string name="sewage_disposal_string_adress_edit_text">adres</string>
     <string name="sewage_disposal_string_quantity_edit_text">ilosc</string>
     <string name="sewage_disposal_string_add_sewage_disposal_button">Dodaj</string>

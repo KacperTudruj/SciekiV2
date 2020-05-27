@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.sciekiv2.model.CommunityData
+import com.example.sciekiv2.model.TypeOfSewageData
 import io.realm.Realm
 import io.realm.kotlin.where
 
@@ -44,6 +45,27 @@ class Rename() : AppCompatActivity() {
             }
 
         }
+
+        if (intentExtras?.getString("fieldNameToEdit") == "sewage") {
+            val communityResults =
+                realm.where<TypeOfSewageData>().equalTo("id", intentExtras?.getString("queryId"))
+                    .findFirst()
+            editText.setText(communityResults?.typeOfSewageName)
+            button.setOnClickListener {
+                if (editText.text.toString() == "")
+                    Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()
+                else {
+                    realm.beginTransaction()
+                    communityResults?.typeOfSewageName = editText.text.toString()
+                    realm.copyToRealmOrUpdate(communityResults)
+                    realm.commitTransaction()
+                    this.finish()
+                }
+            }
+
+        }
+
+
         //Czas to dobrze zrobić. WALIDACJA, Na to samą nazwę, oraz na puste pole. Zamiast wykonać ackcję to wyswietlić Tosta :D I nie tylko ten erkan
     }
 }

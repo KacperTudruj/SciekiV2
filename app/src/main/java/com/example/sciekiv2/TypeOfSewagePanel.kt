@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import com.example.sciekiv2.adapter.TypeOfSewageAdapter
-import com.example.sciekiv2.model.TypeOfSewage
+import com.example.sciekiv2.model.TypeOfSewageData
 import io.realm.Realm
 import io.realm.kotlin.where
 
@@ -24,7 +24,7 @@ class TypeOfSewagePanel : AppCompatActivity() {
         setContentView(R.layout.activity_type_of_sewage)
         realm = Realm.getDefaultInstance()
 
-        val typeOfSewageResults = realm.where<TypeOfSewage>().findAll()
+        val typeOfSewageResults = realm.where<TypeOfSewageData>().findAll()
         listView = findViewById(R.id.type_of_sewage_list_view)
         val adapter = TypeOfSewageAdapter(this, typeOfSewageResults)
         adapter.notifyDataSetChanged()
@@ -46,7 +46,7 @@ class TypeOfSewagePanel : AppCompatActivity() {
 
     private fun addTypeOfSewageData(typeOfSewageName: String) {
         realm.beginTransaction()
-        val typeOfSewage = TypeOfSewage()
+        val typeOfSewage = TypeOfSewageData()
         typeOfSewage.typeOfSewageName = typeOfSewageName
         realm.copyToRealmOrUpdate(typeOfSewage)
         realm.commitTransaction()

@@ -6,7 +6,7 @@ import io.realm.annotations.RealmClass
 import java.util.*
 
 @RealmClass
-open class TypeOfSewage (
+open class TypeOfSewageData(
     @PrimaryKey var id: String = UUID.randomUUID().toString(),
     private var createdAt: Date = Date(),
     var typeOfSewageName: String = ""

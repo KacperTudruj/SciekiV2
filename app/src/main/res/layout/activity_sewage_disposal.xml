@@ -41,14 +41,12 @@
             android:layout_marginTop="30dp"
             android:textColor="#FFFFFF" />
 
-        <EditText
+        <Spinner
             android:id="@+id/sewage_disposal_id_type_edit_text"
-            android:layout_width="320dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:hint="@string/sewage_disposal_string_type_edit_text"
-            android:textColor="#FFFFFF"
-            android:theme="@style/SciekiTheme.EditText" />
+            android:textColor="#FFFFFF" />
 
 
         <EditText
