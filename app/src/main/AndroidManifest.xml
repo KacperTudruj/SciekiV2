@@ -10,24 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SciekiTheme">
-        <activity
-            android:name=".TypeOfSewagePanel"
-            android:label="@string/title_activity_type_of_sewage">
-        </activity>
+        <activity android:name=".TypeOfSewagePanel" />
         <activity android:name=".Rename" />
         <activity android:name=".CommunityPanel" />
-        <activity
-            android:name=".SewageDisposal"
-            android:label="@string/title_activity_sewage_disposal" />
-        <activity
-            android:name=".ControlPanelActivity"
-            android:label="@string/title_activity_control_panel" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+        <activity android:name=".SewageDisposal" />
+        <activity android:name=".ControlPanelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

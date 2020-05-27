@@ -11,34 +11,29 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    <!-- MainActivity/WelcomeScreen    -->
-    <string name="wellcome_text">Witaj Grzegorzu</string>
-    <string name="wellcome_button">Zaczynamy?</string>
-    <string name="title_activity_control_panel">ControlPanelActivity</string>
-
     <!--ControlPanelActivity            -->
-    <string name="controll_panel_text">Panel Kontrolny</string>
-    <string name="sewage_disposal">Dodaj Wywóz</string>
-    <string name="count_disposal">Zlicz</string>
-    <string name="title_activity_sewage_disposal">sewage_disposal</string>
+    <string name="control_panel_string_controll_panel_text">Panel Kontrolny</string>
+    <string name="control_panel_string_string_list_text_view">Lista Gmin</string>
+    <string name="control_panel_string_sewage_disposal">Dodaj Wywóz</string>
+    <string name="control_panel_string_count_disposal">Zlicz</string>
+    <string name="control_panel_string_title_activity_sewage_disposal">sewage_disposal</string>
 
     <!--SewageDisposalActivity          -->
-    <string name="sewage_disposal_text">Dodaj Wywóz</string>
-    <string name="community_spinner">Gmina</string>
-    <string name="type_of_sewage_edit_text">rodzaj ścieku</string>
-    <string name="adress_edit_text">adres</string>
-    <string name="quantity_of_sewage_edit_text">ilosc</string>
-    <string name="add_sewage_disposal_data_button">Dodaj</string>
-    <string name="community_list_button">Gminy</string>
-    <string name="community_list_is_empty">Brak gminy</string>
+    <string name="sewage_disposal_string_text_view">Dodaj Wywóz</string>
+    <string name="sewage_disposal_string_type_of_sewage_edit_text">rodzaj ścieku</string>
+    <string name="sewage_disposal_string_adress_edit_text">adres</string>
+    <string name="sewage_disposal_string_quantity_of_sewage_edit_text">ilosc</string>
+    <string name="sewage_disposal_string_add_sewage_disposal_data_button">Dodaj</string>
 
     <!--CommunityPanel                  -->
-    <string name="community_list_text_view">Lista Gmin</string>
-    <string name="commutniy_add_button">Dodaj Gmię</string>
-    <string name="title_activity_type_of_sewage">type_of_sewage</string>
+    <string name="community_panel_string_list_text_view">Lista Gmin</string>
+    <string name="community_panel_string_add_sewage_disposal_data_button">Dodaj</string>
+    <string name="community_panel_string_add_button">Dodaj Gmię</string>
+    <string name="community_panel_string_list_is_empty">Brak gminy</string>
 
     <!--TypeOfSewagePanel               -->
-    <string name="type_of_sewage_list_text_view">Rodzaj Ścieków</string>
-    <string name="type_of_sewage_add_button">Dodaj rodzaj ścieku</string>
+    <string name="type_of_sewage_string_list_text_view">Rodzaj Ścieków</string>
+    <string name="type_of_sewage_string_edit_Text">Ściek</string>
+    <string name="type_of_sewage_string_add_button">Dodaj rodzaj ścieku</string>
 
 </resources>

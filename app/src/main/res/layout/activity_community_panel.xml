@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/SciekiTheme"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/layout_for_community_panel"
@@ -27,7 +26,7 @@
             android:padding="10dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:text="@string/community_list_text_view"
+            android:text="@string/community_panel_string_list_text_view"
             tools:ignore="RtlHardcoded" />
 
         <EditText
@@ -39,7 +38,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:textColor="#FFFFFF"
-            android:hint="@string/add_sewage_disposal_data_button"
+            android:hint="@string/community_panel_string_add_sewage_disposal_data_button"
             android:theme="@style/SciekiTheme.EditText"
             tools:ignore="LabelFor" />
 
@@ -51,7 +50,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/commutniy_add_button"
+            android:text="@string/community_panel_string_add_button"
             android:theme="@style/SciekiTheme.Button" />
 
     </LinearLayout>

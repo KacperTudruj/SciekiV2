@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/SciekiTheme"
-    tools:context=".MainActivity">
+    android:theme="@style/SciekiTheme">
 
     <TextView
         android:id="@+id/sewage_disposal"
@@ -16,7 +15,7 @@
         android:layout_marginTop="90dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:text="@string/sewage_disposal_text" />
+        android:text="@string/sewage_disposal_string_text_view" />
 
     <!--    DODAJ POLA DO DODANIA SCIEKU -->
     <LinearLayout
@@ -31,9 +30,8 @@
             android:id="@+id/adress_edit_text"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:hint="@string/adress_edit_text"
+            android:hint="@string/sewage_disposal_string_adress_edit_text"
             android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText" />
 
@@ -41,8 +39,6 @@
             android:id="@+id/community_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/adress_edit_text"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:textColor="#FFFFFF" />
 
@@ -50,10 +46,8 @@
             android:id="@+id/type_of_sewage_edit_text"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/community_spinner"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:hint="@string/type_of_sewage_edit_text"
+            android:hint="@string/sewage_disposal_string_type_of_sewage_edit_text"
             android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText" />
 
@@ -62,10 +56,8 @@
             android:id="@+id/quantity_of_sewage_edit_text"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/type_of_sewage_edit_text"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:hint="@string/quantity_of_sewage_edit_text"
+            android:hint="@string/sewage_disposal_string_quantity_of_sewage_edit_text"
             android:inputType="numberDecimal"
             android:theme="@style/SciekiTheme.EditText" />
 
@@ -77,8 +69,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@id/quantity_of_sewage_edit_text"
-            android:text="@string/add_sewage_disposal_data_button"
+            android:text="@string/sewage_disposal_string_add_sewage_disposal_data_button"
             android:theme="@style/SciekiTheme.Button" />
 
     </LinearLayout>

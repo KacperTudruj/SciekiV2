@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/SciekiTheme"
-    tools:context=".MainActivity">
+    android:theme="@style/SciekiTheme">
 
     <TextView
-        android:id="@+id/controll_panel_text"
+        android:id="@+id/control_panel_textview_controll_panel_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
         android:layout_marginTop="90dp"
         android:gravity="center"
-        android:text="@string/controll_panel_text" />
+        android:text="@string/control_panel_string_controll_panel_text" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,26 +23,26 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/sewage_disposal_button"
+            android:id="@+id/control_panel_button_sewage_disposal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/sewage_disposal"
+            android:text="@string/control_panel_string_sewage_disposal"
             android:theme="@style/SciekiTheme.Button" />
 
         <Button
-            android:id="@+id/show_disposal_button"
+            android:id="@+id/control_panel_button_show_disposal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@+id/sewage_disposal_button"
-            android:text="@string/count_disposal"
+            android:layout_below="@+id/control_panel_button_sewage_disposal"
+            android:text="@string/control_panel_string_count_disposal"
             android:theme="@style/SciekiTheme.Button"/>
 
         <Button
@@ -55,12 +53,12 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@+id/show_disposal_button"
-            android:text="Do wyjebania bazy"
+            android:layout_below="@+id/control_panel_button_show_disposal"
+            android:text="Reset Realma"
             android:theme="@style/SciekiTheme.Button"/>
 
         <Button
-            android:id="@+id/community_list_button"
+            android:id="@+id/control_panel_button_community_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -68,19 +66,19 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_below="@id/dousuwaniaelemtowWbazie"
-            android:text="@string/community_list_text_view"
+            android:text="@string/control_panel_string_string_list_text_view"
             android:theme="@style/SciekiTheme.Button"/>
 
         <Button
-            android:id="@+id/type_of_sewage_panel"
+            android:id="@+id/control_panel_button_type_of_sewage_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@id/community_list_button"
-            android:text="@string/type_of_sewage_edit_text"
+            android:layout_below="@id/control_panel_button_community_list"
+            android:text="@string/type_of_sewage_string_add_button"
             android:theme="@style/SciekiTheme.Button"/>
 
     </RelativeLayout>

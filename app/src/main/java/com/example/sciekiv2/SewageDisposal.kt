@@ -45,7 +45,7 @@ class SewageDisposal : AppCompatActivity() {
         if (communityDataBaseResults.isEmpty()) {
             saveSewageButton.isEnabled = false
             saveSewageButton.text = "X"
-            communityList.add(getText(R.string.community_list_is_empty) as String)
+            communityList.add(getText(R.string.community_panel_string_list_is_empty) as String)
         } else {
             for (community in realm.where<CommunityData>().findAll()) {
                 communityList.add(community?.communityName.toString())
