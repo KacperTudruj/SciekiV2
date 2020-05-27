@@ -30,9 +30,9 @@ class TypeOfSewagePanel : AppCompatActivity() {
         adapter.notifyDataSetChanged()
         listView.adapter = adapter
 
-        val editTextTypeOfSewage = findViewById<EditText>(R.id.edit_text_type_of_sewage)
+        val editTextTypeOfSewage = findViewById<EditText>(R.id.type_of_sewage_id_edit_text)
 
-        addTypeOfSewageToDBButton = findViewById(R.id.type_of_sewage_add_button)
+        addTypeOfSewageToDBButton = findViewById(R.id.type_of_sewage_id_add_button)
         addTypeOfSewageToDBButton.setOnClickListener {
             if (editTextTypeOfSewage.text.toString() == "") {
                 Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()

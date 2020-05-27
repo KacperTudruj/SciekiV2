@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/SciekiTheme"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/SciekiTheme">
 
     <LinearLayout
-        android:id="@+id/layout_for_community_panel"
+        android:id="@+id/layout_for_sewage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -19,51 +19,51 @@
         tools:layout_editor_absoluteX="-2dp">
 
         <TextView
-            android:id="@+id/community_list_text_view"
+            android:id="@+id/type_of_sewage_id_list_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:padding="10dp"
             android:gravity="center"
             android:orientation="vertical"
+            android:padding="10dp"
             android:text="@string/type_of_sewage_string_list_text_view"
             tools:ignore="RtlHardcoded" />
 
         <EditText
-            android:id="@+id/edit_text_type_of_sewage"
+            android:id="@+id/type_of_sewage_id_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#FFFFFF"
             android:hint="@string/type_of_sewage_string_edit_Text"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
             android:theme="@style/SciekiTheme.EditText"
             tools:ignore="LabelFor" />
 
         <Button
-            android:id="@+id/type_of_sewage_add_button"
+            android:id="@+id/type_of_sewage_id_add_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            android:padding="10dp"
             android:text="@string/type_of_sewage_string_add_button"
             android:theme="@style/SciekiTheme.Button" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_for_community_panel_data"
+        android:id="@+id/layout_for_sewage_panel_data"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_for_community_panel"
+        app:layout_constraintTop_toBottomOf="@+id/layout_for_sewage"
         tools:ignore="MissingConstraints">
 
         <ListView

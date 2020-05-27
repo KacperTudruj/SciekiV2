@@ -32,11 +32,11 @@ class SewageDisposal : AppCompatActivity() {
 
         realm = Realm.getDefaultInstance()
 
-        adressEditText = findViewById(R.id.adress_edit_text)
-        spinnerCommunity = findViewById(R.id.community_spinner)
-        typeOfSewageEditText = findViewById(R.id.type_of_sewage_edit_text)
-        quantityOfSewageEditText = findViewById(R.id.quantity_of_sewage_edit_text)
-        saveSewageButton = findViewById(R.id.add_sewage_disposal_data_button)
+        adressEditText = findViewById(R.id.sewage_disposal_id_adress_edit_text)
+        spinnerCommunity = findViewById(R.id.sewage_disposal_id_community_spinner)
+        typeOfSewageEditText = findViewById(R.id.sewage_disposal_id_type_edit_text)
+        quantityOfSewageEditText = findViewById(R.id.sewage_disposal_id_quantity_edit_text)
+        saveSewageButton = findViewById(R.id.sewage_disposal_id_add_sewage_disposal_button)
 
         val communityDataBaseResults = realm.where<CommunityData>().findAll()
         val communityList = ArrayList<String>()

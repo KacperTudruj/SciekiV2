@@ -5,14 +5,13 @@
     android:layout_height="match_parent"
     android:weightSum="100">
 
-
     <TextView
+        android:id="@+id/adapter_name"
         android:gravity="center"
         android:text="TextView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:id="@+id/adapter_name"/>
+        android:padding="10dp" />
 
     <RelativeLayout
         android:orientation="vertical"

@@ -23,14 +23,14 @@ class CommunityPanel : AppCompatActivity() {
 
         val communityResults = realm.where<CommunityData>().findAll()
 
-        listView = findViewById(R.id.community_list_view)
+        listView = findViewById(R.id.community_panel_id_list_view)
         val adapter = CommunityAdapter(this, communityResults)
         adapter.notifyDataSetChanged()
         listView.adapter = adapter
 
-        val editTextCommunity = findViewById<EditText>(R.id.edit_text_community)
+        val editTextCommunity = findViewById<EditText>(R.id.community_panel_id_edit_text)
 
-        addCommunityToDBButton = findViewById(R.id.add_community_button)
+        addCommunityToDBButton = findViewById(R.id.community_panel_id_add_button)
         addCommunityToDBButton.setOnClickListener {
             if (editTextCommunity.text.toString() == "")
                 Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()

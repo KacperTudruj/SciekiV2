@@ -22,8 +22,8 @@ class Rename() : AppCompatActivity() {
         val intentExtras = intent.extras
         realm = Realm.getDefaultInstance()
 
-        editText = findViewById(R.id.edit_text_community_window)
-        button = findViewById(R.id.edit_button_community_window)
+        editText = findViewById(R.id.rename_id_edit_text_view)
+        button = findViewById(R.id.rename_id_button)
 
 
         if (intentExtras?.getString("fieldNameToEdit") == "community") {

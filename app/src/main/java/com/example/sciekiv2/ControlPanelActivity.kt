@@ -24,10 +24,10 @@ class ControlPanelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control_panel)
         realm = Realm.getDefaultInstance()
-        saveSewageToDB = findViewById(R.id.control_panel_button_sewage_disposal)
-        readSewageFromDB = findViewById(R.id.control_panel_button_show_disposal)
-        communityButton = findViewById(R.id.control_panel_button_community_list)
-        typeOfSewageButton = findViewById(R.id.control_panel_button_type_of_sewage_list)
+        saveSewageToDB = findViewById(R.id.control_panel_id_button_sewage_disposal)
+        readSewageFromDB = findViewById(R.id.control_panel_id_button_show_disposal)
+        communityButton = findViewById(R.id.control_panel_id_button_community_list)
+        typeOfSewageButton = findViewById(R.id.control_panel_id_button_type_of_sewage_list)
 
         //TESTOWE
         dousuwaniaelemtowWbazie = findViewById(R.id.dousuwaniaelemtowWbazie)
