@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/SciekiTheme">
-        <activity android:name=".StoredSewageView"></activity>
+        <activity android:name=".ShowControlPanel"/>
+        <activity android:name=".AddControlPanel" />
+        <activity android:name=".StoredSewageView" />
         <activity android:name=".adapter.StoredSewageData" />
         <activity android:name=".TypeOfSewagePanel" />
         <activity android:name=".Rename" />

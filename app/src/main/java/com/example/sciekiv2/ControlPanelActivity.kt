@@ -13,10 +13,8 @@ import io.realm.kotlin.where
 
 class ControlPanelActivity : AppCompatActivity() {
 
-    private lateinit var intenToSewageDisposal: Button
-    private lateinit var readSewageFromDB: Button
-    private lateinit var communityButton: Button
-    private lateinit var typeOfSewageButton: Button
+    private lateinit var intenToAddPanel: Button
+    private lateinit var showInformation: Button
     private lateinit var realm: Realm
 
     //TESTOWE
@@ -26,45 +24,29 @@ class ControlPanelActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control_panel)
         realm = Realm.getDefaultInstance()
-        intenToSewageDisposal = findViewById(R.id.control_panel_id_button_sewage_disposal)
-        readSewageFromDB = findViewById(R.id.control_panel_id_button_show_disposal)
-        communityButton = findViewById(R.id.control_panel_id_button_community_list)
-        typeOfSewageButton = findViewById(R.id.control_panel_id_button_type_of_sewage_list)
+
+        intenToAddPanel = findViewById(R.id.control_panel_id_button_add_pannel)
+        showInformation = findViewById(R.id.control_panel_id_button_show)
 
         //TESTOWE
         dousuwaniaelemtowWbazie = findViewById(R.id.dousuwaniaelemtowWbazie)
 
-        intenToSewageDisposal.setOnClickListener {
-            if (realm.where<CommunityData>().findAll().isEmpty())
-                Toast.makeText(this, "Najpierw musisz dodać Gminę", Toast.LENGTH_SHORT).show()
-            else if (realm.where<TypeOfSewageData>().findAll().isEmpty())
-                Toast.makeText(this, "Najpierw musisz dodać rodzaj ścieków", Toast.LENGTH_SHORT).show()
-            else if(realm.where<CommunityData>().findAll().isEmpty() && realm.where<TypeOfSewageData>().findAll().isEmpty())
-                Toast.makeText(this, "Najpierw musisz dodać gminę i rodzaj ścieków", Toast.LENGTH_SHORT).show()
-            else{
-                val intent = Intent(this, SewageDisposal::class.java)
-                startActivity(intent);
-            }
+        intenToAddPanel.setOnClickListener {
+            val intent = Intent(this, AddControlPanel::class.java)
+            startActivity(intent);
         }
-        readSewageFromDB.setOnClickListener {
-            readRecordFromDatabase()
+        showInformation.setOnClickListener {
+            val intent = Intent(this, ShowControlPanel::class.java)
+            startActivity(intent)
         }
 
         //TESTOWE
         dousuwaniaelemtowWbazie.setOnClickListener {
             funkcjaktoraWyjebieKiedys()
         }
-        communityButton.setOnClickListener {
-            val intent = Intent(this, CommunityPanel::class.java)
-            startActivity(intent);
-        }
-
-        typeOfSewageButton.setOnClickListener {
-            val intent = Intent(this, TypeOfSewagePanel::class.java)
-            startActivity(intent)
-        }
     }
 
+    //TESTOWE
     private fun readRecordFromDatabase() {
         //realm.beginTransaction()
 
@@ -74,8 +56,8 @@ class ControlPanelActivity : AppCompatActivity() {
         //Toast.makeText(this, result[0]?.quantity_of_sewage.toString(), Toast.LENGTH_SHORT).show()
 
         //realm.commitTransaction()
-        val intent = Intent(this, StoredSewageView::class.java)
-        startActivity(intent)
+//        val intent = Intent(this, StoredSewageView::class.java)
+//        startActivity(intent)
     }
 
     //TESTOWE

@@ -7,14 +7,14 @@
     android:theme="@style/SciekiTheme">
 
     <TextView
-        android:id="@+id/control_panel_text_view"
+        android:id="@+id/add_control_panel_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
         android:layout_marginTop="90dp"
         android:gravity="center"
-        android:text="@string/control_panel_string_text_view" />
+        android:text="@string/add_control_panel_string_text_view" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,38 +23,38 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/control_panel_id_button_add_pannel"
+            android:id="@+id/add_control_panel_id_button_sewage_disposal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/control_panel_string_button_add_pannel"
+            android:text="@string/add_control_panel_string_sewage_disposal"
             android:theme="@style/SciekiTheme.Button" />
 
         <Button
-            android:id="@+id/control_panel_id_button_show"
+            android:id="@+id/add_control_panel_id_button_community_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@+id/control_panel_id_button_add_pannel"
-            android:text="@string/control_panel_string_show"
+            android:layout_below="@id/add_control_panel_id_button_sewage_disposal"
+            android:text="@string/control_panel_string_string_list_text_view"
             android:theme="@style/SciekiTheme.Button"/>
 
         <Button
-            android:id="@+id/dousuwaniaelemtowWbazie"
+            android:id="@+id/add_control_panel_id_button_type_of_sewage_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_below="@+id/control_panel_id_button_show"
-            android:text="Reset Realma"
+            android:layout_below="@id/add_control_panel_id_button_community_list"
+            android:text="@string/add_control_panel_string__add_button"
             android:theme="@style/SciekiTheme.Button"/>
 
     </RelativeLayout>

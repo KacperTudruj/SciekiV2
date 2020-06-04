@@ -41,7 +41,6 @@ class TypeOfSewageAdapter(context: Context, typeOfSewageDataResult: RealmResults
         editResultButton.setOnClickListener {
             val intent = Intent(this.context, Rename()::class.java)
 
-            //Nie działa edycja, należy ją poprawić...
             //sending communityname to edit
             intent.putExtra("fieldNameToEdit", "sewage")
             intent.putExtra("toEdit", this.typeOfSewageDataResult[position]?.typeOfSewageName)

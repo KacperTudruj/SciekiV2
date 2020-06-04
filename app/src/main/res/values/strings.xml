@@ -14,8 +14,8 @@
     <!--ControlPanelActivity            -->
     <string name="control_panel_string_text_view">Panel Kontrolny</string>
     <string name="control_panel_string_string_list_text_view">Lista Gmin</string>
-    <string name="control_panel_string_sewage_disposal">Dodaj Wywóz</string>
-    <string name="control_panel_string_count_disposal">Zlicz</string>
+    <string name="control_panel_string_button_add_pannel">Dodaj</string>
+    <string name="control_panel_string_show">Pokaż</string>
     <string name="control_panel_string_title_activity_sewage_disposal">sewage_disposal</string>
 
     <!--SewageDisposalActivity          -->
@@ -33,9 +33,18 @@
     <!--TypeOfSewagePanel               -->
     <string name="type_of_sewage_string_list_text_view">Rodzaj Ścieków</string>
     <string name="type_of_sewage_string_edit_Text">Ściek</string>
-    <string name="type_of_sewage_string_add_button">Dodaj rodzaj ścieku</string>
+    <string name="type_of_sewage_string_add_button">Lista ścieków</string>
 
     <!--    Rename-->
     <string name="rename_string_button">edytuj</string>
     <string name="title_activity_stored_sewage_data">StoredSewageData</string>
+
+    <!--    AddControlPanel-->
+    <string name="add_control_panel_string_text_view">Dodaj</string>
+    <string name="add_control_panel_string_sewage_disposal">Dodaj Wywóz</string>
+    <string name="add_control_panel_string__add_button">Lista ścieków</string>
+
+    <!--    ShowControlPanel-->
+    <string name="show_control_panel_string_text_view">Panel Informacyjny</string>
+    <string name="control_panel_string_button_show_database">Pokaż bazę</string>
 </resources>
