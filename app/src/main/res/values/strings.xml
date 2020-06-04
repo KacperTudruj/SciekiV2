@@ -37,4 +37,5 @@
 
     <!--    Rename-->
     <string name="rename_string_button">edytuj</string>
+    <string name="title_activity_stored_sewage_data">StoredSewageData</string>
 </resources>

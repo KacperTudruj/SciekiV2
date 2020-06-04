@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/adapter_stored_adress"
+        android:gravity="center"
+        android:text="Adrss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/adapter_stored_community"
+        android:gravity="center"
+        android:text="Gmina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/adapter_stored_sewage_type"
+        android:gravity="center"
+        android:text="rodzaj ścieku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/adapter_stored_quantity_of_sewage"
+        android:gravity="center"
+        android:text="ilość cieków"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/adapter_stored_date"
+        android:gravity="center"
+        android:text="data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="33.3">
+
+        <Button
+            android:id="@+id/edit_result_button"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="edytuj"
+            android:theme="@style/SciekiTheme.Button"/>
+
+        <Button
+            android:id="@+id/adapter_delete_sewage_button"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_toEndOf="@+id/edit_result_button"
+            android:text="usuń"
+            android:theme="@style/SciekiTheme.Button"/>
+    </RelativeLayout>
+
+</LinearLayout>

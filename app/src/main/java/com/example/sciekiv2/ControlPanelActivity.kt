@@ -66,15 +66,16 @@ class ControlPanelActivity : AppCompatActivity() {
     }
 
     private fun readRecordFromDatabase() {
-        realm.beginTransaction()
+        //realm.beginTransaction()
 
-        val result = realm.where<SewageDisposalData>().findAll()
-
+        //val result = realm.where<SewageDisposalData>().findAll()
         //val test = result.average("quantity_of_sewage")
         //communityDataResult.makeText(this, result.average("quantity_of_sewage").toString(), Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, result[0]?.quantity_of_sewage.toString(), Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, result[0]?.quantity_of_sewage.toString(), Toast.LENGTH_SHORT).show()
 
-        realm.commitTransaction()
+        //realm.commitTransaction()
+        val intent = Intent(this, StoredSewageView::class.java)
+        startActivity(intent)
     }
 
     //TESTOWE
