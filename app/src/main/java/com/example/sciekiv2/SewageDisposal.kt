@@ -2,20 +2,15 @@ package com.example.sciekiv2
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import com.example.sciekiv2.model.CommunityData
 import com.example.sciekiv2.model.SewageDisposalData
 import com.example.sciekiv2.model.TypeOfSewageData
 import io.realm.Realm
-import io.realm.RealmResults
 import io.realm.kotlin.where
-import java.util.*
 import kotlin.collections.ArrayList
 
 class SewageDisposal : AppCompatActivity() {

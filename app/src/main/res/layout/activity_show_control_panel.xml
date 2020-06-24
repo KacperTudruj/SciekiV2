@@ -10,26 +10,44 @@
         android:id="@+id/show_control_panel_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
         android:layout_marginTop="90dp"
         android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
         android:text="@string/show_control_panel_string_text_view" />
+
+    <TextView
+        android:id="@+id/show_control_panel_date_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/show_control_panel_date_start" />
+
+    <TextView
+        android:id="@+id/show_control_panel_date_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/show_control_panel_date_end" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <Button
             android:id="@+id/show_control_panel_id_database"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            android:padding="10dp"
             android:text="@string/control_panel_string_button_show_database"
             android:theme="@style/SciekiTheme.Button" />
 

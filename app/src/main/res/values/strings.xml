@@ -47,4 +47,7 @@
     <!--    ShowControlPanel-->
     <string name="show_control_panel_string_text_view">Panel Informacyjny</string>
     <string name="control_panel_string_button_show_database">Pokaż bazę</string>
+    <string name="show_control_panel_date_start">Czas od</string>
+    <string name="show_control_panel_date_end">Czas do</string>
+
 </resources>

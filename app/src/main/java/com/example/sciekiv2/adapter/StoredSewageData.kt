@@ -1,9 +1,7 @@
 package com.example.sciekiv2.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +12,11 @@ import com.example.sciekiv2.R
 import com.example.sciekiv2.model.SewageDisposalData
 import io.realm.Realm
 import io.realm.RealmResults
-import org.w3c.dom.Text
+import java.text.SimpleDateFormat
+import java.time.DayOfWeek
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class StoredSewageData(context: Context, sewageDisposalData: RealmResults<SewageDisposalData>) :
     BaseAdapter() {
@@ -29,6 +31,7 @@ class StoredSewageData(context: Context, sewageDisposalData: RealmResults<Sewage
     }
 
     //responsible for rendering out each row
+    @SuppressLint("SimpleDateFormat")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         realm = Realm.getDefaultInstance()
 
@@ -53,7 +56,9 @@ class StoredSewageData(context: Context, sewageDisposalData: RealmResults<Sewage
         storedCommunity.text = this.sewageDisposalData[position]?.community
         storedSewage.text = this.sewageDisposalData[position]?.type_of_sewage
         storedQuantityOfSewage.text = this.sewageDisposalData[position]?.quantity_of_sewage.toString()
-        storedDate.text = this.sewageDisposalData[position]?.createdAt.toString()
+
+        val date = this.sewageDisposalData[position]?.createdAt
+        storedDate.text = "${date?.dayOfMonth}.${date?.monthValue}.${date?.year}"
 
         return row
     }

@@ -4,12 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
-import android.widget.Toast
-import com.example.sciekiv2.model.CommunityData
 import com.example.sciekiv2.model.SewageDisposalData
-import com.example.sciekiv2.model.TypeOfSewageData
 import io.realm.Realm
-import io.realm.kotlin.where
 
 class ControlPanelActivity : AppCompatActivity() {
 
